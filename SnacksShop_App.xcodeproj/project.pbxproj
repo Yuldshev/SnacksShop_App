@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		163D9A412D660C000013C2CE /* Snacks_Shop_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snacks_Shop_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		163D9A412D660C000013C2CE /* SnacksShop_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnacksShop_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		163D9A432D660C000013C2CE /* Snacks_Shop_App */ = {
+		163D9A432D660C000013C2CE /* SnacksShop_App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Snacks_Shop_App;
+			path = SnacksShop_App;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +32,7 @@
 		163D9A382D660BFF0013C2CE = {
 			isa = PBXGroup;
 			children = (
-				163D9A432D660C000013C2CE /* Snacks_Shop_App */,
+				163D9A432D660C000013C2CE /* SnacksShop_App */,
 				163D9A422D660C000013C2CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +40,7 @@
 		163D9A422D660C000013C2CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				163D9A412D660C000013C2CE /* Snacks_Shop_App.app */,
+				163D9A412D660C000013C2CE /* SnacksShop_App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		163D9A402D660C000013C2CE /* Snacks_Shop_App */ = {
+		163D9A402D660C000013C2CE /* SnacksShop_App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 163D9A4F2D660C010013C2CE /* Build configuration list for PBXNativeTarget "Snacks_Shop_App" */;
+			buildConfigurationList = 163D9A4F2D660C010013C2CE /* Build configuration list for PBXNativeTarget "SnacksShop_App" */;
 			buildPhases = (
 				163D9A3D2D660C000013C2CE /* Sources */,
 				163D9A3E2D660C000013C2CE /* Frameworks */,
@@ -61,13 +61,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				163D9A432D660C000013C2CE /* Snacks_Shop_App */,
+				163D9A432D660C000013C2CE /* SnacksShop_App */,
 			);
-			name = Snacks_Shop_App;
+			name = SnacksShop_App;
 			packageProductDependencies = (
 			);
 			productName = Snacks_Shop_App;
-			productReference = 163D9A412D660C000013C2CE /* Snacks_Shop_App.app */;
+			productReference = 163D9A412D660C000013C2CE /* SnacksShop_App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 163D9A3C2D660BFF0013C2CE /* Build configuration list for PBXProject "Snacks_Shop_App" */;
+			buildConfigurationList = 163D9A3C2D660BFF0013C2CE /* Build configuration list for PBXProject "SnacksShop_App" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				163D9A402D660C000013C2CE /* Snacks_Shop_App */,
+				163D9A402D660C000013C2CE /* SnacksShop_App */,
 			);
 		};
 /* End PBXProject section */
@@ -251,7 +251,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Snacks_Shop_App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SnacksShop_App/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 9WVBG69A9A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -267,9 +267,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "yuld-shev.Snacks-Shop-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -280,7 +284,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Snacks_Shop_App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SnacksShop_App/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 9WVBG69A9A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -296,16 +300,20 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "yuld-shev.Snacks-Shop-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		163D9A3C2D660BFF0013C2CE /* Build configuration list for PBXProject "Snacks_Shop_App" */ = {
+		163D9A3C2D660BFF0013C2CE /* Build configuration list for PBXProject "SnacksShop_App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				163D9A4D2D660C010013C2CE /* Debug */,
@@ -314,7 +322,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		163D9A4F2D660C010013C2CE /* Build configuration list for PBXNativeTarget "Snacks_Shop_App" */ = {
+		163D9A4F2D660C010013C2CE /* Build configuration list for PBXNativeTarget "SnacksShop_App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				163D9A502D660C010013C2CE /* Debug */,
