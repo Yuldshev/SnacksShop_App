@@ -1,18 +1,22 @@
-//
-//  CategoryModel.swift
-//  SnacksShop_App
-//
-//  Created by Yuldashev Fazliddin on 20/02/25.
-//
-
 import SwiftUI
 
-struct CategoryModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+enum ProductCategory: String, CaseIterable {
+  case all = "All"
+  case choco = "Choco"
+  case chips = "Chips"
+  case candy = "Candy"
 }
 
-#Preview {
-    CategoryModel()
+struct CategoryModel: Identifiable, Hashable {
+  let id = UUID()
+  let icon: String
+  let title: ProductCategory
 }
+
+let categoryList: [CategoryModel] = [
+  CategoryModel(icon: "", title: .all),
+  CategoryModel(icon: "iconChoco", title: .choco),
+  CategoryModel(icon: "iconChips", title: .chips),
+  CategoryModel(icon: "iconCandy", title: .candy)
+]
+

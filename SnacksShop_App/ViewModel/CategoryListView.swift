@@ -1,18 +1,29 @@
-//
-//  CategoryListView.swift
-//  SnacksShop_App
-//
-//  Created by Yuldashev Fazliddin on 20/02/25.
-//
-
 import SwiftUI
 
 struct CategoryListView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  @Binding var selectedCategory: ProductCategory
+  
+  var body: some View {
+    ForEach(categoryList, id: \.id) { item in
+      Button {
+        selectedCategory = item.title
+      } label: {
+        HStack {
+          if item.title != .all {
+            Image(item.icon)
+              .resizable()
+              .scaledToFit()
+              .frame(width: 21)
+          }
+          
+          Text(item.title.rawValue)
+            .font(.jakartaMedium(size: 13))
+        }
+        .padding(20)
+        .background(selectedCategory == item.title ? .sDark : .sSecondary)
+        .tint(selectedCategory == item.title ? .sAccent : .sDark)
+        .clipShape(Capsule())
+      }
     }
-}
-
-#Preview {
-    CategoryListView()
+  }
 }
