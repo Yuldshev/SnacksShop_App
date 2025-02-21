@@ -7,12 +7,14 @@ struct HomeView: View {
   
   //MARK: - Body
   var body: some View {
-    ScrollView {
-      VStack {
-        headerBarView
-        categoryListView
-        detailCategoryListView
-        productListView
+    NavigationStack {
+      ScrollView {
+        VStack {
+          HeaderBarView(title: "Snacks", category: "Shop", button: "menu")
+          categoryListView
+          detailCategoryListView
+          productListView
+        }
       }
     }
   }
@@ -20,23 +22,6 @@ struct HomeView: View {
 
 //MARK: - Extension View
 extension HomeView {
-  var headerBarView: some View {
-    HStack {
-      Text("Order From The Best Of **Snacks**")
-        .font(.jakartaRegular(size: 30))
-        .padding(.trailing)
-      
-      Spacer()
-      
-      Image("menuBurger")
-        .padding()
-        .frame(width: 70, height: 90)
-        .overlay(RoundedRectangle(cornerRadius: 50)
-          .stroke(.sSecondary, lineWidth: 4))
-    }
-    .padding(30)
-  }
-  
   var categoryListView: some View {
     HStack {
       ScrollView(.horizontal, showsIndicators: false) {
@@ -50,11 +35,15 @@ extension HomeView {
   
   var detailCategoryListView: some View {
     HStack {
-      Text("\(selectedCategory.rawValue) **Collections**")
-        .font(.jakartaRegular(size: 25))
-      Spacer()
-      Image("iconMiniBack")
-      
+      NavigationLink {
+        CollectionView(selectedCategory: $selectedCategory)
+      } label: {
+        Text("\(selectedCategory.rawValue) **Collections**")
+          .font(.jakartaRegular(size: 25))
+        Spacer()
+        Image("iconMiniBack")
+      }
+      .tint(.sDark)
     }
     .padding(30)
   }
@@ -62,7 +51,7 @@ extension HomeView {
   var productListView: some View {
     ScrollView(.horizontal, showsIndicators: false) {
       LazyHStack {
-        ProductCard(selectedCategory: $selectedCategory)
+        ProductCardView(selectedCategory: $selectedCategory)
       }
     }
   }

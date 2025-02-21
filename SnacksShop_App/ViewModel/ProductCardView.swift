@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProductCard: View {
+struct ProductCardView: View {
   @Binding var selectedCategory: ProductCategory
   
   var body: some View {
@@ -59,9 +59,9 @@ struct ProductCard: View {
               endPoint: .bottomTrailing),
             lineWidth: 2))
         }
+        .padding(30)
+        .frame(width: 336, height: 422)
       }
-      .padding(30)
-      .frame(width: 336, height: 422)
       .background(item.color)
       .clipShape(RoundedRectangle(cornerRadius: 58))
       .padding(.leading, 30)
