@@ -25,7 +25,7 @@ let productList: [ProductModel] = [
   ProductModel(name: "Coconut Chips", category: .chips, image: "coconutChips", price: 6, color: .cGreen2, description: "Natural coconut chips, lightly sweetened and toasted to a crispy texture, providing a good source of healthy fats and fiber."),
   
   //MARK: - Category Candy
-  ProductModel(name: "Haribo Goldbears", category: .candy, image: "hariboGoldbears", price: 3, color: .cOrange, description: "Classic gummy bears with fruity flavors, beloved for their chewy texture and variety of tastes."),
+  ProductModel(name: "Haribo Fruits", category: .candy, image: "hariboGoldbears", price: 3, color: .cOrange, description: "Classic gummy bears with fruity flavors, beloved for their chewy texture and variety of tastes."),
   ProductModel(name: "Skittles Lime", category: .candy, image: "skittlesLime", price: 4, color: .cGreen2, description: "Vibrant candies with a tangy-sweet fruit taste, offering an explosion of flavor in a rainbow of colors."),
   ProductModel(name: "Baskin Robbins", category: .candy, image: "baskinRobbins", price: 7, color: .cBrown, description: "Confections inspired by popular Baskin Robbins ice cream flavors, offering a variety of tastes in a convenient form for sweet lovers.")
 ]

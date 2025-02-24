@@ -13,7 +13,7 @@ struct HeaderView: View {
       // Header Title
       title
         .font(.jakartaRegular(size: 42))
-        .frame(width: 216)
+        .frame(width: 216, height: 200, alignment: .leading)
       
       Spacer()
       
@@ -28,14 +28,13 @@ struct HeaderView: View {
             content: AnyView(
               Text("\(number)")
                 .font(.jakartaRegular(size: 36))
-                .clipShape(RoundedRectangle(cornerRadius: 60))
+                .clipShape(Capsule())
             ),
             action: buttonAction
           )
       }
     }
-    .padding(.trailing, 30)
-    .padding(.leading, -10)
+    .padding(.horizontal, 30)
     .frame(maxWidth: .infinity)
     .frame(height: 106)
   }
@@ -51,7 +50,7 @@ struct CustomButton: View {
       content
         .frame(width: 69, height: 95)
         .overlay {
-          RoundedRectangle(cornerRadius: 60).stroke(.sLight, lineWidth: 4)
+          Capsule().stroke(.sLight, lineWidth: 4)
         }
     }
   }

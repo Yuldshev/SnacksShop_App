@@ -3,7 +3,7 @@ import SwiftUI
 struct CategoryView: View {
   
   // MARK: - Properties
-  @State private var isActive: Category = .choco
+  @State var isActive: Category
   
   // MARK: - Body
   var body: some View {
@@ -58,5 +58,5 @@ struct CategoryItemView: View {
 
 // MARK: - Preview
 #Preview {
-  CategoryView()
+  CategoryView(isActive: .all)
 }
