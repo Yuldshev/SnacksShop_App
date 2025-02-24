@@ -65,10 +65,3 @@ struct ProductCardView: View {
     .clipShape(RoundedRectangle(cornerRadius: isLarge ? 40 : 20))
   }
 }
-
-#Preview {
-  ProductCardView(
-    product: ProductModel(name: "Good Source", category: .choco, image: "goodSource", price: 8, color: .cPink, description: ""),
-    isLarge: true
-  )
-}

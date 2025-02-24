@@ -14,7 +14,7 @@
 		1623A5B72D6A06EC0093B587 /* Exceptions for "SnacksShop_App" folder in "SnacksShop_App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Resources/SnacksShop_App/Resources/Info.plist,
+				Resources/Info.plist,
 			);
 			target = 163D9A402D660C000013C2CE /* SnacksShop_App */;
 		};

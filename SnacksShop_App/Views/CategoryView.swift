@@ -3,7 +3,7 @@ import SwiftUI
 struct CategoryView: View {
   
   // MARK: - Properties
-  @State var isActive: Category
+  @Binding var isActive: Category
   
   // MARK: - Body
   var body: some View {
@@ -54,9 +54,4 @@ struct CategoryItemView: View {
     }
     .animation(.easeInOut(duration: 0.3), value: isActive)
   }
-}
-
-// MARK: - Preview
-#Preview {
-  CategoryView(isActive: .all)
 }
