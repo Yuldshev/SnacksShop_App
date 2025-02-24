@@ -4,7 +4,7 @@ import SwiftUI
 struct SnacksShop_App: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+          HeaderView(title: Text("**Snack** shop"), buttonType: .back, buttonAction: {})
         }
     }
 }
