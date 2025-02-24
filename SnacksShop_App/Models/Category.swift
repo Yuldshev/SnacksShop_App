@@ -9,7 +9,7 @@ enum Category: String, CaseIterable {
 
 struct CategoryModel: Identifiable, Hashable {
   let id = UUID()
-  let icon: String
+  let icon: String?
   let name: Category
   
   var displayName: String {
@@ -18,7 +18,7 @@ struct CategoryModel: Identifiable, Hashable {
 }
 
 let categoryList: [CategoryModel] = [
-  CategoryModel(icon: "iconAll", name: .all),
+  CategoryModel(icon: nil, name: .all),
   CategoryModel(icon: "iconChoco", name: .choco),
   CategoryModel(icon: "iconChips", name: .chips),
   CategoryModel(icon: "iconCandy", name: .candy)
