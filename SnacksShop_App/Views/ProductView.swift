@@ -4,7 +4,7 @@ struct ProductView: View {
   
   // MARK: - Properties
   @EnvironmentObject var cartManager: CartManager
-  @StateObject var viewModel = ProductViewModel()
+  @EnvironmentObject var viewModel: ProductViewModel
   
   // MARK: - Body
   var body: some View {

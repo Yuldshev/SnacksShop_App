@@ -6,7 +6,7 @@ struct CollectionView: View {
   @Environment(\.dismiss) var dismiss
   @EnvironmentObject var cartManager: CartManager
   @State private var isCartPresented = false
-  @StateObject var viewModel = ProductViewModel()
+  @EnvironmentObject var viewModel: ProductViewModel
   
   //MARK: - Body
   var body: some View {

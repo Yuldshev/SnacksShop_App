@@ -3,7 +3,7 @@ import SwiftUI
 struct CategoryView: View {
   
   // MARK: - Properties
-  @StateObject var viewModel = ProductViewModel()
+  @EnvironmentObject var viewModel: ProductViewModel
   
   // MARK: - Body
   var body: some View {

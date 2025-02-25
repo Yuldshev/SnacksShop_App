@@ -2,7 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
   //MARK: - Properties
-  @StateObject var viewModel = ProductViewModel()
+  @EnvironmentObject var viewModel: ProductViewModel
   @EnvironmentObject var cartManager: CartManager
   
   //MARK: - Body
@@ -33,7 +33,10 @@ struct HomeView: View {
 //MARK: - Collection
 extension HomeView {
   var collectionScreen: some View {
-    NavigationLink(destination: CollectionView().environmentObject(cartManager)) {
+    NavigationLink(destination: CollectionView()
+      .environmentObject(cartManager)
+      .environmentObject(viewModel)
+    ) {
       HStack {
         Text("**\(viewModel.selectedCategory.rawValue)** Collections")
           .font(.jakartaRegular(size: 26))

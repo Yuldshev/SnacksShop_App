@@ -19,10 +19,13 @@ struct ProductCardView: View {
       
       VStack(alignment: .leading) {
         Text(product.name)
+          .foregroundStyle(.black)
           .font(.jakartaBold(size: isLarge ? 36: 19))
           .frame(width: isLarge ? 170 : 89, height: isLarge ? 100 : 50, alignment: .leading)
+          .multilineTextAlignment(.leading)
         
         Text(product.category.rawValue)
+          .foregroundStyle(.black)
           .font(.jakartaRegular(size: isLarge ? 12 : 6))
           .padding(isLarge ? 20 : 10)
           .background(.white)
@@ -32,6 +35,7 @@ struct ProductCardView: View {
         
         HStack {
           Text("$ \(Int(product.price))")
+            .foregroundStyle(.black)
             .font(.jakartaBold(size: isLarge ? 18 : 12))
           
           Spacer()
@@ -40,9 +44,9 @@ struct ProductCardView: View {
             cartManager.addToCart(product: product, quantity: 1)
           } label: {
             Image(isLarge ? "iconBagBig" : "iconBag")
-              .foregroundStyle(.sLight)
+              .foregroundStyle(.white)
               .frame(width: isLarge ? 94 : 52, height: isLarge ? 64 : 32)
-              .background(.sDark)
+              .background(.black)
               .clipShape(Capsule())
           }
           
@@ -51,7 +55,7 @@ struct ProductCardView: View {
         .padding(.leading, isLarge ? 24 : 10)
         .frame(height: isLarge ? 76 : 40)
         .frame(maxWidth: .infinity)
-        .background(.ultraThickMaterial.opacity(0.9))
+        .background(.white.opacity(0.7))
         .clipShape(Capsule())
         .overlay {
           Capsule().stroke(
