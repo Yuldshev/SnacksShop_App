@@ -3,14 +3,14 @@ import SwiftUI
 struct ProductView: View {
   
   // MARK: - Properties
-  @Binding var isActive: Category
   @EnvironmentObject var cartManager: CartManager
+  @StateObject var viewModel = ProductViewModel()
   
   // MARK: - Body
   var body: some View {
     ScrollView(.horizontal, showsIndicators: false) {
       LazyHStack {
-        ForEach(productList.filter { isActive == .all || $0.category == isActive }, id: \.id) { item in
+        ForEach(viewModel.filteredProducts, id: \.id) { item in
           NavigationLink {
             DetailsProductView(product: item)
               .environmentObject(cartManager)

@@ -3,10 +3,10 @@ import SwiftUI
 struct CollectionView: View {
   
   //MARK: - Properties
-  @Binding var isActive: Category
   @Environment(\.dismiss) var dismiss
   @EnvironmentObject var cartManager: CartManager
   @State private var isCartPresented = false
+  @StateObject var viewModel = ProductViewModel()
   
   //MARK: - Body
   var body: some View {
@@ -14,13 +14,13 @@ struct CollectionView: View {
       ScrollView(.vertical, showsIndicators: false) {
         VStack {
           HeaderView(
-            title: Text("**\(isActive.rawValue)** Collection"),
+            title: Text("**\(viewModel.selectedCategory.rawValue)** Collection"),
             buttonType: .back,
             buttonAction: { dismiss() }
           )
           
           LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
-            ForEach(productList.filter { isActive == .all || $0.category == isActive }, id: \.id) { item in
+            ForEach(viewModel.filteredProducts, id: \.id) { item in
               NavigationLink {
                 DetailsProductView(product: item)
                   .environmentObject(cartManager)
@@ -45,7 +45,7 @@ struct CollectionView: View {
     .padding(.top, 60)
     .ignoresSafeArea()
     .navigationBarBackButtonHidden(true)
-    .animation(.easeInOut(duration: 0.3), value: cartManager.items.count)
+    .animation(.default, value: cartManager.items.count)
     .sheet(isPresented: $isCartPresented) {
       CartView().environmentObject(cartManager)
     }

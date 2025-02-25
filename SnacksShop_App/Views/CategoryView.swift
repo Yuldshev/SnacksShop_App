@@ -3,15 +3,15 @@ import SwiftUI
 struct CategoryView: View {
   
   // MARK: - Properties
-  @Binding var isActive: Category
+  @StateObject var viewModel = ProductViewModel()
   
   // MARK: - Body
   var body: some View {
     HStack {
-      ForEach(categoryList, id: \ .id) { item in
+      ForEach(categoryList, id: \.id) { item in
         CategoryItemView(
           category: item,
-          isActive: isActive == item.name,
+          isActive: viewModel.selectedCategory == item.name,
           action: { selectCategory(item.name) }
         )
       }
@@ -21,17 +21,20 @@ struct CategoryView: View {
   // MARK: - Methods
   private func selectCategory(_ category: Category) {
     withAnimation(.easeInOut(duration: 0.3)) {
-      isActive = category
+      viewModel.selectedCategory = category
     }
   }
 }
 
 // MARK: - CategoryItemView
 struct CategoryItemView: View {
+  
+  //MARK: - Properties
   let category: CategoryModel
   let isActive: Bool
   let action: () -> Void
   
+  //MARK: - Body
   var body: some View {
     Button(action: action) {
       HStack(alignment: .center) {
@@ -52,6 +55,6 @@ struct CategoryItemView: View {
       .foregroundStyle(isActive ? .sLight : .sDark)
       .clipShape(Capsule())
     }
-    .animation(.easeInOut(duration: 0.3), value: isActive)
+    .animation(.default, value: isActive)
   }
 }

@@ -23,7 +23,7 @@ struct MainView: View {
       }
       .padding(.top, 60)
       .ignoresSafeArea()
-      .animation(.easeInOut(duration: 0.3), value: cartManager.items.count)
+      .animation(.default, value: cartManager.items.count)
       .sheet(isPresented: $isCartPresented) {
         CartView().environmentObject(cartManager)
       }

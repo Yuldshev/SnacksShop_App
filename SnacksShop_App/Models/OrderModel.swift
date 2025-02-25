@@ -1,8 +1,8 @@
 import Foundation
 
-struct Order: Identifiable {
+struct OrderModel: Identifiable {
   let id = UUID()
-  let items: [CartItem]
+  let items: [CartItemModel]
   let total: Double
   let date: Date
 }

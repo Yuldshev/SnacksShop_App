@@ -53,7 +53,3 @@ struct CartBarView: View {
     ))
   }
 }
-
-#Preview {
-  CartBarView().environmentObject(CartManager())
-}

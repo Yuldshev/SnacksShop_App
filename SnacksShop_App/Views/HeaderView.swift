@@ -61,7 +61,3 @@ enum ButtonType {
   case menu, back, number(Int)
 }
 
-// MARK: - Preview
-#Preview {
-  HeaderView(title: Text("**Snack** Shop"), buttonType: .number(3), buttonAction: {})
-}

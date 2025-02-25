@@ -2,13 +2,13 @@ import Foundation
 import SwiftUI
 
 class CartManager: ObservableObject {
-  @Published var items: [CartItem] = []
+  @Published var items: [CartItemModel] = []
   
   func addToCart(product: ProductModel, quantity: Int) {
     if let index = items.firstIndex(where: { $0.product.id == product.id }) {
       items[index].quantity += quantity
     } else {
-      let newItem = CartItem(product: product, quantity: quantity)
+      let newItem = CartItemModel(product: product, quantity: quantity)
       items.append(newItem)
     }
   }
