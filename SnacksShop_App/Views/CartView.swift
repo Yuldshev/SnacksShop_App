@@ -13,7 +13,8 @@ struct CartView: View {
           title: Text("Cart"),
           buttonType: .number(cartManager.items.count),
           buttonAction: {
-          }).padding(.bottom, 20)
+          })
+        .padding(.vertical, 20)
         
         CartItemsListView().environmentObject(cartManager)
       }

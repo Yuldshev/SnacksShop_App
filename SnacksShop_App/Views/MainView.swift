@@ -6,12 +6,13 @@ struct MainView: View {
   @StateObject var cartManager = CartManager()
   @StateObject var viewModel = ProductViewModel()
   @State private var isCartPresented = false
+  @State private var path = NavigationPath()
   
   //MARK: - Body
   var body: some View {
-    NavigationStack {
+    NavigationStack(path: $path) {
       ZStack(alignment: .bottom) {
-        HomeView()
+        HomeView(path: $path)
           .environmentObject(cartManager)
           .environmentObject(viewModel)
         

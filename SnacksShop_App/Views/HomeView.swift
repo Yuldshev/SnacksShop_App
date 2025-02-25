@@ -4,28 +4,27 @@ struct HomeView: View {
   //MARK: - Properties
   @EnvironmentObject var viewModel: ProductViewModel
   @EnvironmentObject var cartManager: CartManager
+  @Binding var path: NavigationPath
   
   //MARK: - Body
   var body: some View {
-    NavigationStack {
-      ScrollView {
-        HeaderView(
-          title: Text("**Snacks** Shop"),
-          buttonType: .menu,
-          buttonAction: {}
-        )
-        .padding(.bottom, 30)
-        
-        CategoryView()
-          .padding(.bottom, 20)
-        
-        collectionScreen
-          .padding(.bottom, 16)
-        
-        ProductView()
-      }
-      .animation(.default, value: viewModel.selectedCategory)
+    ScrollView {
+      HeaderView(
+        title: Text("**Snacks** Shop"),
+        buttonType: .menu,
+        buttonAction: {}
+      )
+      .padding(.bottom, 30)
+      
+      CategoryView()
+        .padding(.bottom, 20)
+      
+      collectionScreen
+        .padding(.bottom, 16)
+      
+      ProductView()
     }
+    .animation(.default, value: viewModel.selectedCategory)
     .navigationBarBackButtonHidden(true)
   }
 }
