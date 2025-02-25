@@ -5,6 +5,7 @@ struct ProductCardView: View {
   //MARK: - Properties
   let product: ProductModel
   let isLarge: Bool
+  @EnvironmentObject var cartManager: CartManager
   
   //MARK: - Body
   var body: some View {
@@ -35,11 +36,16 @@ struct ProductCardView: View {
           
           Spacer()
           
-          Image(isLarge ? "iconBagBig" : "iconBag")
-            .foregroundStyle(.sLight)
-            .frame(width: isLarge ? 94 : 52, height: isLarge ? 64 : 32)
-            .background(.sDark)
-            .clipShape(Capsule())
+          Button {
+            cartManager.addToCart(product: product, quantity: 1)
+          } label: {
+            Image(isLarge ? "iconBagBig" : "iconBag")
+              .foregroundStyle(.sLight)
+              .frame(width: isLarge ? 94 : 52, height: isLarge ? 64 : 32)
+              .background(.sDark)
+              .clipShape(Capsule())
+          }
+          
         }
         .padding(.horizontal, 6)
         .padding(.leading, isLarge ? 24 : 10)

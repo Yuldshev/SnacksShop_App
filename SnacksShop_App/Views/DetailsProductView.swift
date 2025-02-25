@@ -4,7 +4,6 @@ struct DetailsProductView: View {
   
   //MARK: - Properties
   let product: ProductModel
-  @State var count: CartItem
   @Environment(\.dismiss) var dismiss
   
   //MARK: - Body
@@ -31,7 +30,7 @@ struct DetailsProductView: View {
       }
       .frame(maxHeight: geometry.size.height)
     }
-    .toolbar(.hidden, for: .navigationBar)
+    .navigationBarBackButtonHidden(true)
   }
 }
 
@@ -66,8 +65,6 @@ extension DetailsProductView {
           .font(.jakartaBold(size: 26))
           
         Spacer()
-        
-        CustomStepper(count: $count.quantity)
       }
       Spacer()
     }

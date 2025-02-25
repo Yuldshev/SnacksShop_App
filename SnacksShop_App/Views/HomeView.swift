@@ -3,6 +3,7 @@ import SwiftUI
 struct HomeView: View {
   //MARK: - Properties
   @State var isActive: Category = .all
+  @EnvironmentObject var cartManager: CartManager
   
   //MARK: - Body
   var body: some View {
@@ -25,14 +26,14 @@ struct HomeView: View {
       }
       .animation(.easeInOut(duration: 0.3), value: isActive)
     }
-    .toolbar(.hidden, for: .navigationBar)
+    .navigationBarBackButtonHidden(true)
   }
 }
 
 //MARK: - Collection
 extension HomeView {
   var collectionScreen: some View {
-    NavigationLink(destination: CollectionView(isActive: $isActive)) {
+    NavigationLink(destination: CollectionView(isActive: $isActive).environmentObject(cartManager)) {
       HStack {
         Text("**\(isActive.rawValue)** Collections")
           .font(.jakartaRegular(size: 26))
@@ -49,5 +50,5 @@ extension HomeView {
 
 //MARK: - Preview
 #Preview {
-  HomeView()
+  HomeView().environmentObject(CartManager())
 }

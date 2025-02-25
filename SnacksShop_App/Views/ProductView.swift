@@ -4,6 +4,7 @@ struct ProductView: View {
   
   // MARK: - Properties
   @Binding var isActive: Category
+  @EnvironmentObject var cartManager: CartManager
   
   // MARK: - Body
   var body: some View {
@@ -11,7 +12,8 @@ struct ProductView: View {
       LazyHStack {
         ForEach(productList.filter { isActive == .all || $0.category == isActive }, id: \.id) { item in
           NavigationLink {
-            DetailsProductView(product: item, count: CartItem(product: item, quantity: 0))
+            DetailsProductView(product: item)
+              .environmentObject(cartManager)
           } label: {
             ProductCardView(product: item, isLarge: true)
               .padding(.trailing, 20)
